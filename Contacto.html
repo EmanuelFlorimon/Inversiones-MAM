@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dark-mode.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inversiones MAM - Inicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://inversionesmam.com/wp-content/uploads/sites/136/2022/08/logo.png" alt="Logo Inversiones MAM">
+    </div>
+    <button id="theme-toggle">Cambiar Tema</button>
+    <nav>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="Index.html"><i class="bi bi-house"></i> Inicio</a></li>
+        <li><a href="QuienesSomos.html"><i class="bi bi-people"></i> Quiénes Somos</a></li>
+        <li><a href="Articulos.html"><i class="bi bi-newspaper"></i> Artículos</a></li>
+        <li><a href="Contacto.html"><i class="bi bi-envelope"></i> Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección de Contacto -->
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <div class="contacto-container">
+      <form class="contacto-form">
+        <input type="text" placeholder="Nombre" required>
+        <div class="contacto-inputs">
+          <input type="tel" placeholder="Teléfono" required>
+          <input type="email" placeholder="Correo" required>
+        </div>
+        <textarea placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <p>O contáctanos directamente por correo: <a href="mailto:inversionesmam21@gmail.com">inversionesmam21@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- Nueva Sección: Video Promocional -->
+  <section id="video-promocional">
+    <h2>Video Promocional</h2>
+    <div class="video-container">
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/CAQlrlQOIU0?si=Esjw2C_qXZBYJvPF" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Sección de Ubicación -->
+  <section id="ubicacion">
+    <h2>Nuestra Ubicación</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d946.0345646021569!2d-69.97437197605714!3d18.477395571163935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8b4d4d5a19b5%3A0xd0dec49a1ef47a89!2sInversiones%20Mam!5e0!3m2!1sen!2sdo!4v1741462525988!5m2!1sen!2sdo"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <!-- Redes Sociales -->
+      <div class="social-media">
+        <a href="https://www.instagram.com/inversionesmam/" target="_blank">
+          <i class="bi bi-instagram" class="icon"></i>
+        </a>
+      </div>
+
+      <!-- Información de Contacto -->
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="bi bi-envelope icon"></i>
+          <a href="mailto:inversionesmam21@gmail.com">inversionesmam21@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="bi bi-telephone icon"></i>
+          <span>809-372-4651</span>
+        </div>
+      </div>
+
+      <!-- Derechos de Autor y enlace a Políticas de Privacidad -->
+      <div class="copyright">
+        <p>© 2025 Inversiones MAM. Todos los derechos reservados.</p>
+        <a href="politicas.html" class="privacy-link">Políticas de Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Script para el menú hamburguesa
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    // Script para cambiar tema
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      body.setAttribute('data-theme', savedTheme);
+
+      themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    });
+  </script>
+</body>
+</html>

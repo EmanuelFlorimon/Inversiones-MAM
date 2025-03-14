@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dark-mode.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inversiones MAM - Inicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://inversionesmam.com/wp-content/uploads/sites/136/2022/08/logo.png" alt="Logo Inversiones MAM">
+    </div>
+    <button id="theme-toggle">Cambiar Tema</button>
+    <nav>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="Index.html"><i class="bi bi-house"></i> Inicio</a></li>
+        <li><a href="QuienesSomos.html"><i class="bi bi-people"></i> Quiénes Somos</a></li>
+        <li><a href="Articulos.html"><i class="bi bi-newspaper"></i> Artículos</a></li>
+        <li><a href="Contacto.html"><i class="bi bi-envelope"></i> Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección Productos -->
+  <section id="productos">
+    <h2>Productos</h2>
+    <div class="productos-grid">
+      <div class="producto">
+        <img src="https://inversionesmam.com/wp-content/uploads/sites/136/2022/10/0045BLK_440xx_1440098497607.jpg" alt="Producto 1" loading="lazy">
+        <span>Producto 1</span>
+      </div>
+      <div class="producto">
+        <img src="https://inversionesmam.com/wp-content/uploads/sites/136/2022/10/221_440xx_1472153457643.jpg" alt="Producto 2" loading="lazy">
+        <span>Producto 2</span>
+      </div>
+      <div class="producto">
+        <img src="https://inversionesmam.com/wp-content/uploads/sites/136/2022/10/113CR_R_2017_440xx_1496668621483.jpg" alt="Producto 3" loading="lazy">
+        <span>Producto 3</span>
+      </div>
+      <div class="producto">
+        <img src="https://inversionesmam.com/wp-content/uploads/sites/136/2022/10/0360RNAV_F_440xx.jpg" alt="Producto 4" loading="lazy">
+        <span>Producto 4</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <!-- Redes Sociales -->
+      <div class="social-media">
+        <a href="https://www.instagram.com/inversionesmam/" target="_blank">
+          <i class="bi bi-instagram" style="font-size: 30px; color: #0512a3;"></i>
+        </a>
+      </div>
+
+      <!-- Información de Contacto -->
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="bi bi-envelope" style="font-size: 30px; color: #0512a3;"></i>
+          <a href="mailto:inversionesmam21@gmail.com">inversionesmam21@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="bi bi-telephone" style="font-size: 30px; color: #0512a3;"></i>
+          <span>809-372-4651</span>
+        </div>
+      </div>
+
+      <!-- Derechos de Autor y enlace a Políticas de Privacidad -->
+      <div class="copyright">
+        <p>© 2025 Inversiones MAM. Todos los derechos reservados.</p>
+        <a href="politicas.html" class="privacy-link">Políticas de Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Script para el menú hamburguesa
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    // Script para cambiar tema
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      body.setAttribute('data-theme', savedTheme);
+
+      themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    });
+  </script>
+</body>
+</html>
